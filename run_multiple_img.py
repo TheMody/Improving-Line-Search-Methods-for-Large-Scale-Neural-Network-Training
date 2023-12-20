@@ -1,14 +1,14 @@
 
 from main import main
 
-datasets = ["cifar10"]#["cifar10", "cifar100"]#,"cifar10", "cifar100"]  # ["rte", "cola", "qqp"]#["sst2small", "mrpcsmall", "mnlismall", "qnlismall","sst2","mrpc" ,"cola", "qnli","mnli"]#[ ]#,"mnli"]
+datasets = ["cifar10", "cifar100", "imagenet"]#
 split_by = ["layer"]#"layer","qkv",
 n_opts = [1]
 models = [ "resNet50"]#, "roberta"]
 update_rule = ["cycle"]#"cycle",  "impact_mag"
-optim = [ "adamsls"]#["oladamsls", "adamsls","adam"]#, "sgd", "sgdsls"]"adam",  "kensls","adamsls", "adam", "sgdsls", "sgd",, "olsdgsls"
+optim = [ "kensls","adam","adamsls"]#["oladamsls", "adamsls","adam"]#, "sgd", "sgdsls"]"adam",  "kensls","adamsls", "adam", "sgdsls", "sgd",, "olsdgsls"
 combine = [0]
-numexp = 2
+numexp = 5
 batch_size = [128]
 cs = [0.5]
 epochs = [12]

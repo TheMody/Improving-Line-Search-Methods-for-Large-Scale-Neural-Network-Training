@@ -1,14 +1,14 @@
 
 from main import main
 
-datasets = [ "sst2","qnli", "mnli", ]#, "mnli", "sst2"] #["rte", "cola", "qqp"]#["sst2small", "mrpcsmall", "mnlismall", "qnlismall",,"cola", "qnli","mnli"]#[ ]#,"mnli"]"mrpc",
+datasets = [ "sst2","qnli", "mnli","mrpc" ]#, "mnli", "sst2"] #["rte", "cola", "qqp"]#["sst2small", "mrpcsmall", "mnlismall", "qnlismall",,"cola", "qnli","mnli"]#[ ]#,"mnli"]"mrpc",
 split_by = ["layer"]#"layer","qkv",
 n_opts = [1]
 models = ["bert"]#, "roberta"]
 update_rule = ["cycle"]#"cycle",  "impact_mag"
-optim = ["adamsls", "adam"]#,"adam", "sgdsls"]#, "sgd", "sgdsls"]"adam", "adamsls",
+optim = ["kensls","adamsls", "adam"]#,"adam", "sgdsls"]#, "sgd", "sgdsls"]"adam", "adamsls",
 combine = [0]
-numexp = 1
+numexp = 5
 batch_size = [32]
 cs = [0.3]
 betas = [0.99]
