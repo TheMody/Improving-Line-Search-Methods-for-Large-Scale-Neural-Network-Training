@@ -1,13 +1,16 @@
-# Faster Convergence for Transformer Fine-tuning with Line Search Methods
+# Improving Line Search Methods for Large Scale Neural Network Training
 
-The Repository to the Paper Faster Convergence for Transformer Fine-tuning with Line Search Methods
+The Repository to the Paper Improving Line Search Methods for Large Scale Neural Network Training
 
 ## Abstract
 
-Recent works have shown that line search methods greatly increase performance of traditional stochastic gradient descent methods on a variety of datasets and architectures. In this work we succeed in extending line search methods to the novel and highly popular Transformer architecture and dataset domains in natural language processing. 
-More specifically, we combine the Armijo line search with the Adam optimizer and extend it by subdividing the networks architecture into sensible units and perform the line search separately on these local units. 
-Our optimization method outperforms the traditional Adam optimizer and achieves significant performance improvements for small data sets or small training budgets, while performing equal or better for other tested cases.
-Our work is publicly available as a python package, which provides a hyperparameter-free pytorch optimizer that is compatible with arbitrary network architectures.
+In recent studies, line search methods have shown significant improvements in the performance of traditional stochastic gradient descent techniques, eliminating the need for a specific learning rate schedule \cite{vaswani20a, mahsereci15a, vaswani2021adaptive}. In this paper, we identify existing issues in state-of-the-art line search methods \cite{vaswani20a, vaswani2021adaptive}, propose enhancements, and rigorously evaluate their effectiveness. We test these methods on larger datasets and more complex data domains than before.
+
+Specifically, we improve the Armijo line search by integrating the momentum term from ADAM in its search direction, enabling efficient large-scale training, a task that was previously prone to failure using Armijo line search methods. Our optimization approach outperforms both the previous Armijo implementation and tuned learning rate schedules for Adam.
+
+Our evaluation focuses on Transformers and CNNs in the domains of NLP and image data.
+
+Our work is publicly available as a Python package, which provides a hyperparameter free Pytorch optimizer.
 
 ![Loss Curve](Plots/lossSST2small.png)
 
@@ -30,20 +33,12 @@ for replication:
 
 ## Use in own projects
 
-The custom optimizer is in \sls\adam_sls.py and \sls\sls_base.py 
+The custom optimizer is in \sls\ken_sls.py and \sls\ken_base.py 
 Example Usage:
 
 ```
-from sls.adam_sls import AdamSLS
-optimizer = AdamSLS([model.parameters()])
-```
-For step size smoothing (not described in the original paper, but performs better) use::
-```
-optimizer = AdamSLS([model.parameters()], smooth = True, c = 0.5)
-```
-For splitting the learning rates in your network use:
-```
-optimizer = AdamSLS([parameterlistA, parameterlistB, ... etc], smooth = True, c = 0.5)
+from sls.adam_sls import KenSLS
+optimizer = KenSLS([model.parameters()])
 ```
 
 The typical pytorch forward pass needs to be changed from :
@@ -73,6 +68,12 @@ For replicating the main Results of the Paper run:
 $ python run_multiple.py
 ```
 
+and 
+
+```
+$ python run_multiple_img.py
+```
+
 
 For replicating specific runs or trying out different hyperparameters use:
 
@@ -85,11 +86,10 @@ and change the config.json file appropriately
 
 
 ## Please cite:
-Faster Convergence for Transformer Fine-tuning
+Improving Line Search Methods for Large Scale Neural Network Training
 with Line Search Methods 
 from 
 Philip Kenneweg,
-Leonardo Galli,
 Tristan Kenneweg,
 Barbara Hammer
-To be published in IJCNN 2023
+To be published in ACDSA 2024
