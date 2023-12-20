@@ -12,8 +12,6 @@ Our evaluation focuses on Transformers and CNNs in the domains of NLP and image 
 
 Our work is publicly available as a Python package, which provides a hyperparameter free Pytorch optimizer.
 
-![Loss Curve](Plots/lossSST2small.png)
-
 ## Install
 
 Dependencies:
