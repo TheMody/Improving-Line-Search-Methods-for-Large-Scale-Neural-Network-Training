@@ -3,6 +3,7 @@
 The Repository to the Paper Improving Line Search Methods for Large Scale Neural Network Training
 
 More recent implementation at:
+
 https://github.com/TheMody/No-learning-rates-needed-Introducing-SALSA-Stable-Armijo-Line-Search-Adaptation
 ## Abstract
 
