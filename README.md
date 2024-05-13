@@ -2,6 +2,8 @@
 
 The Repository to the Paper Improving Line Search Methods for Large Scale Neural Network Training
 
+More recent implementation at:
+https://github.com/TheMody/No-learning-rates-needed-Introducing-SALSA-Stable-Armijo-Line-Search-Adaptation
 ## Abstract
 
 In recent studies, line search methods have shown significant improvements in the performance of traditional stochastic gradient descent techniques, eliminating the need for a specific learning rate schedule \cite{vaswani20a, mahsereci15a, vaswani2021adaptive}. In this paper, we identify existing issues in state-of-the-art line search methods \cite{vaswani20a, vaswani2021adaptive}, propose enhancements, and rigorously evaluate their effectiveness. We test these methods on larger datasets and more complex data domains than before.
